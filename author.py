@@ -5,4 +5,4 @@ def print_hi(author):
 
 
 if __name__ == '__main__':
-    print_hi('Author')
+    print_hi('Yagel')
