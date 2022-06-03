@@ -1,7 +1,7 @@
 
 def print_hi(author):
     print(f'Hi, my name is {author}')
-    print('I do not know what to say...')
+    print('Shabat shalom!')
 
 
 if __name__ == '__main__':
