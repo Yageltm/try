@@ -27,26 +27,26 @@ def morse_to_english(path):
             sentence += ' '
         print(sentence)
         f.close()
+        letters = {}
+        for i in sentence:
+            if i in letters:
+                letters[i] += 1
+            elif i != ' ':
+                letters[i] = 1
+        values = letters.values()
+        values = list(set(values))      # הפיכה לסט בכדי למחוק כפילויות
+        values.sort(reverse=True)
+        for i in values:
+            string = ''
+            for j in letters:
+                if letters[j] == i:
+                    string += j
+            print(f'{string} - {i}')
     except IOError:
         print("There is no file named " + path)
     except KeyError:
         print("Error in Morse Code")
-    letters = {}
-    for i in sentence:
-        if i in letters:
-            letters[i] += 1
-        elif i != ' ':
-            letters[i] = 1
-    values = letters.values()
-    values = list(set(values))      # הפיכה לסט בכדי למחוק כפילויות
-    values.sort(reverse=True)
-    for i in values:
-        string = ''
-        for j in letters:
-            if letters[j] == i:
-                string += j
-        print(f'{string} - {i}')
 
 
 if __name__ == "__main__":
-    morse_to_english('morse1.txt')
+    morse_to_english('morse-e1.txt')
